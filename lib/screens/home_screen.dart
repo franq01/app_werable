@@ -13,7 +13,7 @@ class HomeScreen extends StatelessWidget {
 
     return Scaffold(
       appBar: CustomAppBar(title: 'Inicio'),
-      backgroundColor: Color.fromARGB(255, 196, 232, 238), // Fondo oscuro
+      backgroundColor: Color.fromARGB(255, 196, 232, 238), // Fondo claro
       drawer: CustomDrawer(),
       body: Padding(
         padding: const EdgeInsets.all(16.0),

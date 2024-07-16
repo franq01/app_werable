@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:font_awesome_flutter/font_awesome_flutter.dart';
+import 'package:firebase_auth/firebase_auth.dart';
 import '../widgets/custom_app_bar.dart';
 import '../widgets/custom_drawer.dart';
 import '../widgets/settings_option_widget.dart';
@@ -57,7 +58,8 @@ class SettingsScreen extends StatelessWidget {
           _buildIconOption(context, 'no molestar', FontAwesomeIcons.bellSlash),
           _buildIconOption(context, 'caratula', FontAwesomeIcons.clock),
           _buildIconOption(context, 'recordatorio', FontAwesomeIcons.chair),
-          _buildIconOption(context, 'mi perfil', FontAwesomeIcons.person)
+          _buildIconOption(
+              context, 'cerrar sesión', FontAwesomeIcons.signOutAlt)
         ],
       ),
     );
@@ -66,8 +68,9 @@ class SettingsScreen extends StatelessWidget {
   Widget _buildIconOption(BuildContext context, String title, IconData icon) {
     return InkWell(
       onTap: () {
-        if (title == 'mi perfil') {
-          Navigator.push(
+        if (title == 'cerrar sesión') {
+          FirebaseAuth.instance.signOut();
+          Navigator.pushReplacement(
             context,
             MaterialPageRoute(builder: (context) => LoginScreen()),
           );
@@ -94,12 +97,13 @@ class SettingsScreen extends StatelessWidget {
         SettingsOptionWidget(title: 'otras opciones'),
         GestureDetector(
           onTap: () {
-            Navigator.push(
+            FirebaseAuth.instance.signOut();
+            Navigator.pushReplacement(
               context,
               MaterialPageRoute(builder: (context) => LoginScreen()),
             );
           },
-          child: SettingsOptionWidget(title: 'mi perfil'),
+          child: SettingsOptionWidget(title: 'cerrar sesión'),
         ),
       ],
     );
