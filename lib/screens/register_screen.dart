@@ -3,6 +3,8 @@ import 'package:firebase_auth/firebase_auth.dart';
 import 'package:font_awesome_flutter/font_awesome_flutter.dart';
 
 class RegisterScreen extends StatefulWidget {
+  const RegisterScreen({super.key});
+
   @override
   _RegisterScreenState createState() => _RegisterScreenState();
 }
@@ -27,7 +29,7 @@ class _RegisterScreenState extends State<RegisterScreen> {
         Navigator.pushReplacementNamed(context, '/');
       } else {
         ScaffoldMessenger.of(context).showSnackBar(
-          SnackBar(
+          const SnackBar(
             content: Text('Las contraseñas no coinciden'),
           ),
         );
@@ -40,7 +42,7 @@ class _RegisterScreenState extends State<RegisterScreen> {
       );
     } catch (e) {
       ScaffoldMessenger.of(context).showSnackBar(
-        SnackBar(
+        const SnackBar(
           content: Text('Error desconocido al registrarse'),
         ),
       );
@@ -54,14 +56,14 @@ class _RegisterScreenState extends State<RegisterScreen> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      backgroundColor: Color(0xFFF5F5F5),
+      backgroundColor: const Color(0xFFF5F5F5),
       body: Center(
         child: SingleChildScrollView(
           padding: const EdgeInsets.symmetric(horizontal: 32.0),
           child: Column(
             mainAxisAlignment: MainAxisAlignment.center,
             children: [
-              CircleAvatar(
+              const CircleAvatar(
                 radius: 60,
                 backgroundColor: Colors.transparent,
                 child: FaIcon(
@@ -70,8 +72,8 @@ class _RegisterScreenState extends State<RegisterScreen> {
                   color: Color(0xFF4CAF50),
                 ),
               ),
-              SizedBox(height: 20),
-              Text(
+              const SizedBox(height: 20),
+              const Text(
                 'Registrarse',
                 style: TextStyle(
                   fontSize: 28,
@@ -79,65 +81,65 @@ class _RegisterScreenState extends State<RegisterScreen> {
                   color: Color(0xFF4CAF50),
                 ),
               ),
-              SizedBox(height: 20),
+              const SizedBox(height: 20),
               TextField(
                 controller: _emailController,
                 decoration: InputDecoration(
-                  prefixIcon: Icon(Icons.email, color: Color(0xFF4CAF50)),
+                  prefixIcon: const Icon(Icons.email, color: Color(0xFF4CAF50)),
                   labelText: 'Correo Electrónico',
                   border: OutlineInputBorder(
                     borderRadius: BorderRadius.circular(8.0),
                   ),
                 ),
               ),
-              SizedBox(height: 10),
+              const SizedBox(height: 10),
               TextField(
                 controller: _passwordController,
                 obscureText: true,
                 decoration: InputDecoration(
-                  prefixIcon: Icon(Icons.lock, color: Color(0xFF4CAF50)),
+                  prefixIcon: const Icon(Icons.lock, color: Color(0xFF4CAF50)),
                   labelText: 'Contraseña',
                   border: OutlineInputBorder(
                     borderRadius: BorderRadius.circular(8.0),
                   ),
                 ),
               ),
-              SizedBox(height: 10),
+              const SizedBox(height: 10),
               TextField(
                 controller: _confirmPasswordController,
                 obscureText: true,
                 decoration: InputDecoration(
-                  prefixIcon: Icon(Icons.lock, color: Color(0xFF4CAF50)),
+                  prefixIcon: const Icon(Icons.lock, color: Color(0xFF4CAF50)),
                   labelText: 'Confirmar Contraseña',
                   border: OutlineInputBorder(
                     borderRadius: BorderRadius.circular(8.0),
                   ),
                 ),
               ),
-              SizedBox(height: 20),
+              const SizedBox(height: 20),
               _isLoading
-                  ? CircularProgressIndicator()
+                  ? const CircularProgressIndicator()
                   : ElevatedButton(
                       style: ElevatedButton.styleFrom(
-                        padding: EdgeInsets.symmetric(vertical: 15.0),
-                        backgroundColor: Color(0xFF4CAF50),
+                        padding: const EdgeInsets.symmetric(vertical: 15.0),
+                        backgroundColor: const Color(0xFF4CAF50),
                         foregroundColor: Colors.white,
                         shape: RoundedRectangleBorder(
                           borderRadius: BorderRadius.circular(8.0),
                         ),
                       ),
                       onPressed: _registerWithEmailAndPassword,
-                      child: Text(
+                      child: const Text(
                         'Registrarse',
                         style: TextStyle(fontSize: 16),
                       ),
                     ),
-              SizedBox(height: 10),
+              const SizedBox(height: 10),
               TextButton(
                 onPressed: () {
                   Navigator.pop(context);
                 },
-                child: Text(
+                child: const Text(
                   '¿Ya tienes cuenta? Inicia sesión',
                   style: TextStyle(color: Color(0xFF4CAF50)),
                 ),

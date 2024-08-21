@@ -24,7 +24,7 @@ void main() async {
 }
 
 class MyApp extends StatelessWidget {
-  const MyApp({Key? key}) : super(key: key);
+  const MyApp({super.key});
 
   @override
   Widget build(BuildContext context) {
@@ -35,13 +35,14 @@ class MyApp extends StatelessWidget {
       ],
       child: MaterialApp(
         title: 'Health Wearable App',
+        debugShowCheckedModeBanner: false,
         theme: ThemeData(
           primarySwatch: Colors.teal,
           visualDensity: VisualDensity.adaptivePlatformDensity,
         ),
         home: InitialScreen(),
         routes: {
-          '/settings': (ctx) => SettingsScreen(),
+          '/settings': (ctx) => const SettingsScreen(),
           '/health': (ctx) => HealthScreen(),
           '/stats': (ctx) => StatsScreen(),
           '/profile': (ctx) => ProfileScreen(),
@@ -52,6 +53,8 @@ class MyApp extends StatelessWidget {
 }
 
 class InitialScreen extends StatelessWidget {
+  const InitialScreen({super.key});
+
   @override
   Widget build(BuildContext context) {
     return StreamBuilder<User?>(
@@ -74,6 +77,8 @@ class InitialScreen extends StatelessWidget {
 class MyProfileScreen extends StatelessWidget {
   final ImagePicker _picker = ImagePicker();
 
+  MyProfileScreen({super.key});
+
   Future<void> _pickImage(BuildContext context) async {
     // Solicita permisos antes de abrir el selector de imágenes
     final status = await [
@@ -92,7 +97,7 @@ class MyProfileScreen extends StatelessWidget {
     } else {
       // Los permisos no fueron concedidos
       ScaffoldMessenger.of(context).showSnackBar(
-        SnackBar(content: Text('Permisos no concedidos')),
+        const SnackBar(content: Text('Permisos no concedidos')),
       );
     }
   }
@@ -101,12 +106,12 @@ class MyProfileScreen extends StatelessWidget {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        title: Text('Mi Perfil'),
+        title: const Text('Mi Perfil'),
       ),
       body: Center(
         child: ElevatedButton(
           onPressed: () => _pickImage(context),
-          child: Text('Seleccionar Imagen'),
+          child: const Text('Seleccionar Imagen'),
         ),
       ),
     );
@@ -114,13 +119,15 @@ class MyProfileScreen extends StatelessWidget {
 }
 
 class LoginScreen extends StatelessWidget {
+  const LoginScreen({super.key});
+
   @override
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        title: Text('Login'),
+        title: const Text('Login'),
       ),
-      body: Center(
+      body: const Center(
         child: Text('Login Screen'),
       ),
     );

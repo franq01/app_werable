@@ -11,6 +11,8 @@ import '../screens/mi_profile_scren.dart';
 import '../screens/caratula_screen.dart';
 
 class SettingsScreen extends StatefulWidget {
+  const SettingsScreen({super.key});
+
   @override
   _SettingsScreenState createState() => _SettingsScreenState();
 }
@@ -39,12 +41,12 @@ class _SettingsScreenState extends State<SettingsScreen> {
 
       await storageRef.putFile(_selectedImage!);
       ScaffoldMessenger.of(context).showSnackBar(
-        SnackBar(content: Text('Imagen subida con éxito')),
+        const SnackBar(content: Text('Imagen subida con éxito')),
       );
     } catch (e) {
       print('Error al subir la imagen: $e');
       ScaffoldMessenger.of(context).showSnackBar(
-        SnackBar(content: Text('Error al subir la imagen')),
+        const SnackBar(content: Text('Error al subir la imagen')),
       );
     }
   }
@@ -69,18 +71,19 @@ class _SettingsScreenState extends State<SettingsScreen> {
 
   Widget _buildTopBox() {
     return Container(
-      color: Color(0xFF00C5CD),
+      color: const Color(0xFF00C5CD),
       padding: const EdgeInsets.all(16),
       child: Row(
         children: [
-          Icon(FontAwesomeIcons.solidClock, size: 40, color: Colors.white),
-          SizedBox(width: 16),
+          const Icon(FontAwesomeIcons.solidClock,
+              size: 40, color: Colors.white),
+          const SizedBox(width: 16),
           Column(
             crossAxisAlignment: CrossAxisAlignment.start,
             children: [
               Text(user?.email ?? 'Usuario',
-                  style: TextStyle(color: Colors.white, fontSize: 18)),
-              Text('Versión del dispositivo: V9.0.3',
+                  style: const TextStyle(color: Colors.white, fontSize: 18)),
+              const Text('Versión del dispositivo: V9.0.3',
                   style: TextStyle(color: Colors.white, fontSize: 14)),
             ],
           ),
@@ -92,7 +95,7 @@ class _SettingsScreenState extends State<SettingsScreen> {
   Widget _buildHorizontalIcons(BuildContext context) {
     return Container(
       color: Colors.white,
-      padding: EdgeInsets.symmetric(vertical: 16, horizontal: 8),
+      padding: const EdgeInsets.symmetric(vertical: 16, horizontal: 8),
       child: Row(
         mainAxisAlignment: MainAxisAlignment.spaceEvenly,
         children: [
@@ -119,8 +122,8 @@ class _SettingsScreenState extends State<SettingsScreen> {
       child: Column(
         children: [
           Icon(icon, color: Colors.teal, size: 30),
-          SizedBox(height: 8),
-          Text(title, style: TextStyle(fontSize: 12)),
+          const SizedBox(height: 8),
+          Text(title, style: const TextStyle(fontSize: 12)),
         ],
       ),
     );

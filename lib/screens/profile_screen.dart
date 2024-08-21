@@ -7,8 +7,8 @@ class ProfileScreen extends StatelessWidget {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        title: Text('Health report'),
-        backgroundColor: Color(0xFF00C4B4),
+        title: const Text('Health report'),
+        backgroundColor: const Color(0xFF00C4B4),
       ),
       drawer: CustomDrawer(),
       body: SingleChildScrollView(
@@ -16,7 +16,7 @@ class ProfileScreen extends StatelessWidget {
         child: Column(
           children: <Widget>[
             Container(
-              padding: EdgeInsets.all(16.0),
+              padding: const EdgeInsets.all(16.0),
               decoration: BoxDecoration(
                 color: Colors.white,
                 borderRadius: BorderRadius.circular(16.0),
@@ -42,12 +42,12 @@ class ProfileScreen extends StatelessWidget {
                             decoration: BoxDecoration(
                               shape: BoxShape.circle,
                               border: Border.all(
-                                color: Color(0xFF00C4B4),
+                                color: const Color(0xFF00C4B4),
                                 width: 10.0,
                               ),
                             ),
                           ),
-                          Column(
+                          const Column(
                             mainAxisAlignment: MainAxisAlignment.center,
                             children: <Widget>[
                               Text(
@@ -71,7 +71,7 @@ class ProfileScreen extends StatelessWidget {
                       ),
                       Column(
                         children: <Widget>[
-                          Text(
+                          const Text(
                             'Mi calificación de salud',
                             style: TextStyle(
                               fontSize: 18.0,
@@ -91,24 +91,24 @@ class ProfileScreen extends StatelessWidget {
                             onPressed: () {},
                             style: ElevatedButton.styleFrom(
                               backgroundColor: Colors.teal,
-                              padding: EdgeInsets.symmetric(
+                              padding: const EdgeInsets.symmetric(
                                   horizontal: 20.0, vertical: 10.0),
                               shape: RoundedRectangleBorder(
                                 borderRadius: BorderRadius.circular(10.0),
                               ),
-                              textStyle: TextStyle(
+                              textStyle: const TextStyle(
                                 fontSize: 16.0,
                                 fontWeight: FontWeight.bold,
                               ),
                             ),
-                            child: Text('recalcular'),
+                            child: const Text('recalcular'),
                           ),
                         ],
                       ),
                     ],
                   ),
-                  SizedBox(height: 10.0),
-                  Text(
+                  const SizedBox(height: 10.0),
+                  const Text(
                     'Nivel S: 96~100 puntos; Nivel A: 86~95 puntos; Nivel B: 76~85 puntos;',
                     style: TextStyle(
                       fontSize: 14.0,
@@ -119,9 +119,9 @@ class ProfileScreen extends StatelessWidget {
                 ],
               ),
             ),
-            SizedBox(height: 20.0),
+            const SizedBox(height: 20.0),
             Container(
-              padding: EdgeInsets.all(16.0),
+              padding: const EdgeInsets.all(16.0),
               decoration: BoxDecoration(
                 color: Colors.white,
                 borderRadius: BorderRadius.circular(16.0),
@@ -136,15 +136,15 @@ class ProfileScreen extends StatelessWidget {
               child: Column(
                 crossAxisAlignment: CrossAxisAlignment.start,
                 children: <Widget>[
-                  Text(
+                  const Text(
                     'índice corporal',
                     style: TextStyle(
                       fontSize: 18.0,
                       fontWeight: FontWeight.bold,
                     ),
                   ),
-                  SizedBox(height: 10.0),
-                  Row(
+                  const SizedBox(height: 10.0),
+                  const Row(
                     mainAxisAlignment: MainAxisAlignment.spaceBetween,
                     children: <Widget>[
                       Column(
@@ -180,8 +180,8 @@ class ProfileScreen extends StatelessWidget {
                       Icon(FontAwesomeIcons.questionCircle, color: Colors.grey),
                     ],
                   ),
-                  SizedBox(height: 10.0),
-                  Row(
+                  const SizedBox(height: 10.0),
+                  const Row(
                     children: <Widget>[
                       Text('Luz'),
                       Spacer(),
@@ -203,9 +203,9 @@ class ProfileScreen extends StatelessWidget {
                 ],
               ),
             ),
-            SizedBox(height: 20.0),
+            const SizedBox(height: 20.0),
             Container(
-              padding: EdgeInsets.all(16.0),
+              padding: const EdgeInsets.all(16.0),
               decoration: BoxDecoration(
                 color: Colors.white,
                 borderRadius: BorderRadius.circular(16.0),
@@ -217,11 +217,11 @@ class ProfileScreen extends StatelessWidget {
                   ),
                 ],
               ),
-              child: Column(
+              child: const Column(
                 crossAxisAlignment: CrossAxisAlignment.start,
                 children: <Widget>[
                   Text(
-                    'tasa de grasa corporals',
+                    'tasa de grasa corporal',
                     style: TextStyle(
                       fontSize: 18.0,
                       fontWeight: FontWeight.bold,
@@ -268,15 +268,15 @@ class ProfileScreen extends StatelessWidget {
 
   Widget _buildRatingBox(String label, Color color) {
     return Container(
-      margin: EdgeInsets.symmetric(horizontal: 2.0),
-      padding: EdgeInsets.all(8.0),
+      margin: const EdgeInsets.symmetric(horizontal: 2.0),
+      padding: const EdgeInsets.all(8.0),
       decoration: BoxDecoration(
         color: color,
         borderRadius: BorderRadius.circular(5.0),
       ),
       child: Text(
         label,
-        style: TextStyle(
+        style: const TextStyle(
           fontSize: 16.0,
           color: Colors.white,
           fontWeight: FontWeight.bold,

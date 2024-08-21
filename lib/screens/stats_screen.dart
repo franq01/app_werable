@@ -7,8 +7,8 @@ class StatsScreen extends StatelessWidget {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        title: Text('scan my pulse'),
-        backgroundColor: Color(0xFF00C4B4),
+        title: const Text('escanear mi pulso'),
+        backgroundColor: const Color(0xFF00C4B4),
       ),
       drawer: CustomDrawer(),
       body: Padding(
@@ -33,7 +33,7 @@ class StatsScreen extends StatelessWidget {
                           ),
                         ),
                       ),
-                      Column(
+                      const Column(
                         mainAxisAlignment: MainAxisAlignment.center,
                         children: <Widget>[
                           Icon(
@@ -59,8 +59,8 @@ class StatsScreen extends StatelessWidget {
                       ),
                     ],
                   ),
-                  SizedBox(height: 30.0),
-                  Row(
+                  const SizedBox(height: 30.0),
+                  const Row(
                     mainAxisAlignment: MainAxisAlignment.spaceEvenly,
                     children: <Widget>[
                       Column(
@@ -107,18 +107,19 @@ class StatsScreen extends StatelessWidget {
             ElevatedButton(
               onPressed: () {},
               style: ElevatedButton.styleFrom(
-                padding: EdgeInsets.symmetric(horizontal: 50.0, vertical: 15.0),
+                padding: const EdgeInsets.symmetric(
+                    horizontal: 50.0, vertical: 15.0),
                 shape: RoundedRectangleBorder(
                   borderRadius: BorderRadius.circular(20.0),
                 ),
                 backgroundColor: Colors.teal,
                 foregroundColor: Colors.white,
-                textStyle: TextStyle(
+                textStyle: const TextStyle(
                   fontSize: 18.0,
                   fontWeight: FontWeight.bold,
                 ),
               ),
-              child: Text('comensar a medir'),
+              child: const Text('comenzar a medir '),
             ),
           ],
         ),
