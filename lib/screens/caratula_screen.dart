@@ -6,6 +6,8 @@ import 'package:image_picker/image_picker.dart';
 import 'dart:io';
 
 class CaratulaScreen extends StatefulWidget {
+  const CaratulaScreen({super.key});
+
   @override
   _CaratulaScreenState createState() => _CaratulaScreenState();
 }
@@ -53,7 +55,7 @@ class _CaratulaScreenState extends State<CaratulaScreen> {
     } else {
       print('Permission denied');
       ScaffoldMessenger.of(context).showSnackBar(
-        SnackBar(content: Text('Permisos no concedidos')),
+        const SnackBar(content: Text('Permisos no concedidos')),
       );
     }
   }
@@ -67,13 +69,13 @@ class _CaratulaScreenState extends State<CaratulaScreen> {
 
       await storageRef.putFile(_selectedImage!);
       ScaffoldMessenger.of(context).showSnackBar(
-        SnackBar(content: Text('Imagen subida con éxito')),
+        const SnackBar(content: Text('Imagen subida con éxito')),
       );
       _loadImages(); // Recargar las imágenes después de subir una nueva
     } catch (e) {
       print('Error al subir la imagen: $e');
       ScaffoldMessenger.of(context).showSnackBar(
-        SnackBar(content: Text('Error al subir la imagen')),
+        const SnackBar(content: Text('Error al subir la imagen')),
       );
     }
   }
@@ -82,19 +84,19 @@ class _CaratulaScreenState extends State<CaratulaScreen> {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        title: Text('Caratulas'),
+        title: const Text('Caratulas'),
         actions: [
           IconButton(
-            icon: Icon(Icons.add_a_photo),
+            icon: const Icon(Icons.add_a_photo),
             onPressed: _pickImage,
           ),
         ],
       ),
       body: _imageUrls.isEmpty
-          ? Center(child: Text('No hay imágenes disponibles'))
+          ? const Center(child: Text('No hay imágenes disponibles'))
           : GridView.builder(
               padding: const EdgeInsets.all(8.0),
-              gridDelegate: SliverGridDelegateWithFixedCrossAxisCount(
+              gridDelegate: const SliverGridDelegateWithFixedCrossAxisCount(
                 crossAxisCount: 2,
                 crossAxisSpacing: 8.0,
                 mainAxisSpacing: 8.0,

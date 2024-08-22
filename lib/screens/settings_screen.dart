@@ -9,6 +9,7 @@ import '../widgets/custom_drawer.dart';
 import '../widgets/settings_option_widget.dart';
 import '../screens/mi_profile_scren.dart';
 import '../screens/caratula_screen.dart';
+import './ReminderScreen.dart';
 
 class SettingsScreen extends StatefulWidget {
   const SettingsScreen({super.key});
@@ -116,6 +117,11 @@ class _SettingsScreenState extends State<SettingsScreen> {
           Navigator.push(
             context,
             MaterialPageRoute(builder: (context) => CaratulaScreen()),
+          );
+        } else if (title == 'recordatorio') {
+          Navigator.push(
+            context,
+            MaterialPageRoute(builder: (context) => const ReminderScreen()),
           );
         }
       },

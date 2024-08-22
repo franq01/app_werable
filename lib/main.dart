@@ -40,7 +40,7 @@ class MyApp extends StatelessWidget {
           primarySwatch: Colors.teal,
           visualDensity: VisualDensity.adaptivePlatformDensity,
         ),
-        home: InitialScreen(),
+        home: const InitialScreen(),
         routes: {
           '/settings': (ctx) => const SettingsScreen(),
           '/health': (ctx) => HealthScreen(),
