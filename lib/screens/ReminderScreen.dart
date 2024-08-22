@@ -67,12 +67,12 @@ class _ReminderScreenState extends State<ReminderScreen> {
                         subtitle: Text(
                           '${reminder['description'] ?? ''}\n'
                           '${reminder['date'] ?? ''} ${reminder['time'] ?? ''}',
-                          style: const TextStyle(color: Colors.grey[600]),
+                          style: TextStyle(
+                            color: Colors.grey[600],
+                          ),
                         ),
                         trailing: const Icon(FontAwesomeIcons.chevronRight),
-                        onTap: () {
-                          // Aquí puedes agregar lógica para ver detalles del recordatorio
-                        },
+                        onTap: () {},
                       ),
                     );
                   },
@@ -87,7 +87,7 @@ class _ReminderScreenState extends State<ReminderScreen> {
 }
 
 class AddReminderScreen extends StatefulWidget {
-  const AddReminderScreen({Key? key}) : super(key: key);
+  const AddReminderScreen({super.key});
 
   @override
   _AddReminderScreenState createState() => _AddReminderScreenState();
@@ -112,6 +112,7 @@ class _AddReminderScreenState extends State<AddReminderScreen> {
           'date': _selectedDate!.toIso8601String(),
           'time': _selectedTime!.format(context),
         });
+        // ignore: use_build_context_synchronously
         ScaffoldMessenger.of(context).showSnackBar(
           const SnackBar(content: Text('Recordatorio guardado con éxito')),
         );
